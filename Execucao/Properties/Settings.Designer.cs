@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Execução.Properties
+namespace Execucao.Properties
 {
 
 

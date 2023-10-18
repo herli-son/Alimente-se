@@ -13,7 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace Execução
+namespace Execucao
 {
     /// <summary>
     /// Interação lógica para MainWindow.xam
