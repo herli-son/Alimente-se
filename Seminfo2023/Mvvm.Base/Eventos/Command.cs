@@ -5,20 +5,20 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
 
-namespace Componentes.Sevices
+namespace Mvvm.Base.Eventos
 {
-    public class ReleyCommand : ICommand
+    public class Command : ICommand
     {
         private Action<object> execute;
         private Func<object, bool> canExecute;
 
-        public event EventHandler CanExecuteChanged
+        public virtual event EventHandler CanExecuteChanged
         {
             add { CommandManager.RequerySuggested += value; }
             remove { CommandManager.RequerySuggested -= value; }
         }
 
-        public ReleyCommand(Action<object> execute, Func<object, bool> canExecute = null)
+        public Command(Action<object> execute, Func<object, bool> canExecute)
         {
             this.execute = execute;
             this.canExecute = canExecute;
@@ -31,7 +31,7 @@ namespace Componentes.Sevices
 
         public bool CanExecute(object parameter)
         {
-            return canExecute != null || canExecute(parameter);
+            return canExecute(parameter) && execute != null;
         }
     }
 }

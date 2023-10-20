@@ -12,18 +12,19 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using UI.Forms.Pessoas.Pessoas.ViewModels;
 
-namespace Componentes.MVVM
+namespace UI.Forms.Pessoas.Pessoas.Views
 {
     /// <summary>
-    /// Interação lógica para TesteView.xam
+    /// Interação lógica para PessoaView.xam
     /// </summary>
-    public partial class TesteView : UserControl
+    public partial class PessoaView : Page
     {
-        public TesteView()
+        public PessoaView()
         {
             InitializeComponent();
-            this.DataContext = new TesteViewModel();
+            DataContext = new PessoaViewModel();
         }
     }
 }

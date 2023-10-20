@@ -1,5 +1,4 @@
-﻿using Componentes.MVVM;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -13,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using UI.Forms.Pessoas.Pessoas.Views;
 
 namespace Alimente_se
 {
@@ -24,7 +24,7 @@ namespace Alimente_se
         public MainWindow()
         {
             InitializeComponent();
-            this.main.Content = new TesteView();
+            this.main.Content = new PessoaView();
         }
     }
 }
