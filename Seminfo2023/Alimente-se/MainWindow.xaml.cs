@@ -13,6 +13,8 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using UI.Forms.Pessoas.Pessoas.Views;
+using Mvvm.Base.Eventos;
+using System.CodeDom.Compiler;
 
 namespace Alimente_se
 {
@@ -24,7 +26,29 @@ namespace Alimente_se
         public MainWindow()
         {
             InitializeComponent();
-            this.main.Content = new PessoaView();
+            Nav.adicionarBotao("PERFIL", new Command(Execute, CanExecute), FontAwesome.WPF.FontAwesomeIcon.UserCircle);
+            Nav.adicionarBotao("FAVORITOS", new Command(Execute, CanExecute), FontAwesome.WPF.FontAwesomeIcon.Star);
+            Nav.adicionarBotao("LOJAS", new Command(Execute, CanExecute), FontAwesome.WPF.FontAwesomeIcon.ShoppingBasket);
+            Nav.adicionarBotao("ITENS", new Command(Execute, CanExecute), FontAwesome.WPF.FontAwesomeIcon.List);
+            Nav.adicionarBotao("AGENDA", new Command(Execute, CanExecute), FontAwesome.WPF.FontAwesomeIcon.Calendar);
+            Nav.adicionarBotao("AJUDA", new Command(Execute, CanExecute), FontAwesome.WPF.FontAwesomeIcon.QuestionCircle);
+            Nav.adicionarBotao("LOGOUT", new Command(Execute, CanExecute), FontAwesome.WPF.FontAwesomeIcon.ArrowCircleLeft);
+            Pages.comandoFechar(new Command(Close, CanClose));
+        }
+        void Close(object obj)
+        {
+            Close();
+        }
+        bool CanClose(object obj)
+        {
+            return true;
+        }
+        void Execute(object obj)
+        {
+        }
+        bool CanExecute(object obj)
+        {
+            return true;
         }
     }
 }

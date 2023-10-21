@@ -4,11 +4,35 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Alimente_se"
+        xmlns:controles="clr-namespace:Componentes;assembly=Componentes"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800" WindowStartupLocation="CenterScreen">
-    <StackPanel>
-        <Frame x:Name="main" NavigationUIVisibility="Hidden">
-            
-        </Frame>
-    </StackPanel>
+        Title="MainWindow" Height="600" Width="850" 
+        AllowsTransparency="True"
+        WindowStartupLocation="CenterScreen"
+        WindowStyle="None"
+        Background="Transparent">
+
+    <Grid>
+
+        <!--// Window Border //-->
+
+        <Border Background="#212529"
+                CornerRadius="20" />
+
+        <Grid>
+
+            <!--// Base Grid //-->
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="228" />
+                <ColumnDefinition Width="622" />
+            </Grid.ColumnDefinitions>
+
+            <!--// Navigation Panel //-->
+            <controles:Navegacao x:Name="Nav" HorizontalAlignment="Left"/>
+            <controles:Conteudo Grid.Column="1" x:Name="Pages"/>
+
+        </Grid>
+
+    </Grid>
 </Window>

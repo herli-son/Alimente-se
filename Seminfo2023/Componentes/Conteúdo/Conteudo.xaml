@@ -1,0 +1,23 @@
+﻿<UserControl x:Class="Componentes.Conteudo"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Componentes"
+             mc:Ignorable="d" 
+             d:DesignHeight="600" d:DesignWidth="622">
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="../Estilos/Estilos.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </UserControl.Resources>
+
+    <Grid Margin="15" Style="{StaticResource Page_Style}">
+        <Border CornerRadius="0,20,20,0">
+            
+        </Border>
+        <local:BotaoFechar x:Name="Fechar"  HorizontalAlignment="Right" VerticalAlignment="Top" Height="40" Width="40" Margin="0,15,15,0"/>
+    </Grid>
+</UserControl>
