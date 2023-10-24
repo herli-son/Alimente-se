@@ -7,7 +7,7 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
-        <StackPanel x:Name="Nav" Height="400" Width="228" VerticalAlignment="Center">
+        <StackPanel x:Name="Nav" Height="400" Width="228">
             <Border Background="#272B2F"
             CornerRadius="20,0,0,20" />
         </StackPanel>

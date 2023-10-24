@@ -24,22 +24,14 @@ namespace Componentes
         {
             InitializeComponent();
         }
-        public virtual void construir(FontAwesome.WPF.FontAwesomeIcon icone, int tamanho)
+        public void construir(FontAwesome.WPF.FontAwesomeIcon icone, int tamanho, SolidColorBrush cor)
         {
             IconeVinculado = icone;
+            Icone.Foreground = cor;
             this.Width = tamanho;
             this.Height = tamanho;
         }
-        public virtual FontAwesome.WPF.FontAwesomeIcon IconeVinculado
-        {
-            get
-            {
-                return Icone.Icon;
-            }
-            set
-            {
-                Icone.Icon = value;
-            }
-        }
+        public FontAwesome.WPF.FontAwesomeIcon IconeVinculado { get => Icone.Icon; set => Icone.Icon = value; }
+        public Brush Cor { get => Icone.Foreground; set => Icone.Foreground = value; }
     }
 }

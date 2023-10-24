@@ -7,12 +7,18 @@
              mc:Ignorable="d" 
              d:DesignHeight="55" d:DesignWidth="55">
     <Grid>
-        <Button x:Name="CloseApp"
+        <Button x:Name="Fechar"
+                BorderThickness="0"
                 Background="Transparent"
                 Click="CloseApp_Click"
                 MouseLeave="CloseApp_MouseLeave"
-                MouseEnter="CloseApp_MouseEnter" BorderBrush="{x:Null}" Foreground="{x:Null}">
-            <local:Icon x:Name="Icone" IconeVinculado="PowerOff" Background="Transparent" Margin="-22, 0,0,0" HorizontalAlignment="Left"/>
+                MouseEnter="CloseApp_MouseEnter" >
+
+            <local:Icon x:Name="Icone" 
+                        IconeVinculado="PowerOff" 
+                        Background="Transparent" 
+                        Margin="-22, 0,0,0" 
+                        HorizontalAlignment="Left"/>
         </Button>
     </Grid>
 </UserControl>

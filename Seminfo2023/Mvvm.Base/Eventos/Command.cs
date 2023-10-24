@@ -18,7 +18,7 @@ namespace Mvvm.Base.Eventos
             remove { CommandManager.RequerySuggested -= value; }
         }
 
-        public Command(Action<object> execute, Func<object, bool> canExecute)
+        public Command(Action<object> execute, Func<object, bool> canExecute = null)
         {
             this.execute = execute;
             this.canExecute = canExecute;
@@ -31,7 +31,7 @@ namespace Mvvm.Base.Eventos
 
         public bool CanExecute(object parameter)
         {
-            return canExecute(parameter) && execute != null;
+            return canExecute == null || canExecute(parameter);
         }
     }
 }

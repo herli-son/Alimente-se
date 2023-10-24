@@ -17,16 +17,26 @@ namespace Componentes
         public Navegacao()
         {
             InitializeComponent();
+            Visoes = new Dictionary<string, object>();
         }
-
-        public virtual void adicionarBotao(string Titulo,ICommand comando, FontAwesome.WPF.FontAwesomeIcon iconeVinculado)
+        public string BotaoSelecionado { get => Nav.Children.OfType<BotaoNavegacao>().FirstOrDefault(x => x.Checado).Texto.Text; }
+        public Dictionary<string, object> Visoes { get; set; }
+        public void adicionarBotao(string titulo, string grupo, object tela, ICommand comando, FontAwesome.WPF.FontAwesomeIcon iconeVinculado)
         {
             BotaoNavegacao botao = new BotaoNavegacao();
             botao.Checado = Nav.Children.Count == 1;
-            botao.Texto.Text = Titulo;
-            botao.command = comando;
+            botao.Texto.Text = titulo;
+            botao.Command = comando;
+            botao.Grupo = grupo;
             botao.Icone.IconeVinculado = iconeVinculado;
             Nav.Children.Add(botao);
+            if (!Visoes.ContainsKey(titulo))
+                Visoes.Add(titulo, tela);
+        }
+        public object ObterVisaoAtiva()
+        {
+            if (!Visoes.ContainsKey(BotaoSelecionado)) return null;
+            return Visoes[BotaoSelecionado];
         }
     }
 }

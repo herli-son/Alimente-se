@@ -8,6 +8,11 @@
              mc:Ignorable="d" 
              d:DesignHeight="57" d:DesignWidth="57">
     <Grid>
-        <fa:ImageAwesome x:Name="Icone" HorizontalAlignment="Left" VerticalAlignment="Center" Height="30" Width="30" Margin="22,0,0,0"/>
+        <fa:ImageAwesome x:Name="Icone" 
+                         HorizontalAlignment="Left" 
+                         VerticalAlignment="Center" 
+                         Height="30" Width="30" 
+                         Margin="22,0,0,0"
+                         Icon="Anchor"/>
     </Grid>
 </UserControl>

@@ -67,7 +67,6 @@
     <Compile Include="Botão\BotaoNavegacao.xaml.cs">
       <DependentUpon>BotaoNavegacao.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Botão\Btn.cs" />
     <Compile Include="Campo de Texto\CampoTexto.xaml.cs">
       <DependentUpon>CampoTexto.xaml</DependentUpon>
     </Compile>
@@ -92,6 +91,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="TesteView\Testes.xaml.cs">
+      <DependentUpon>Testes.xaml</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -124,15 +126,15 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Estilos\Estilos.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="Icones\Icon.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Navegação\Navegacao.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="TesteView\Testes.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

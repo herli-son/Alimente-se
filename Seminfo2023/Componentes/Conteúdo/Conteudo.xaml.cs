@@ -24,8 +24,5 @@ namespace Componentes
         {
             InitializeComponent();
         }
-        public void comandoFechar(ICommand fechar) {
-            this.Fechar.command = fechar;
-        }
     }
 }

@@ -16,14 +16,11 @@ using System.Windows.Shapes;
 namespace Componentes
 {
     /// <summary>
-    /// Interação lógica para BotaoNavegacao.xam
+    /// Interação lógica para Testes.xam
     /// </summary>
-    public partial class BotaoNavegacao : UserControl
+    public partial class Testes : UserControl
     {
-        public ICommand Command { get { return Botao.Command; } set { Botao.Command = value; }} 
-        public bool Checado { get { return Botao.IsChecked.Value; } set { Botao.IsChecked = value; } }
-        public string Grupo { get { return Botao.GroupName; } set { Botao.GroupName = value; } }
-        public BotaoNavegacao()
+        public Testes()
         {
             InitializeComponent();
         }

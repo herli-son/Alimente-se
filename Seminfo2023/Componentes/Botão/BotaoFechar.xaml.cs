@@ -24,20 +24,22 @@ namespace Componentes
         {
             InitializeComponent();
         }
-        public ICommand command { get => CloseApp.Command; set => CloseApp.Command = value; }
+        public ICommand command { get => Fechar.Command; set => Fechar.Command = value; }
         private void CloseApp_Click(object sender, RoutedEventArgs e)
         {
-            command.Execute(null);
+            command?.Execute(null);
         }
 
         private void CloseApp_MouseEnter(object sender, MouseEventArgs e)
         {
-            Icone.IconeVinculado = FontAwesome.WPF.FontAwesomeIcon.Close;
+            Icone.Cor = Brushes.Red;
+            Fechar.Background = Brushes.Transparent;
         }
 
         private void CloseApp_MouseLeave(object sender, MouseEventArgs e)
         {
-            Icone.IconeVinculado = FontAwesome.WPF.FontAwesomeIcon.PowerOff;
+            Icone.Cor = Brushes.Black;
+            Fechar.Background = Brushes.Transparent;
         }
     }
 }

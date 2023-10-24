@@ -7,17 +7,39 @@
              mc:Ignorable="d" 
              d:DesignHeight="600" d:DesignWidth="622">
     <UserControl.Resources>
-        <ResourceDictionary>
-            <ResourceDictionary.MergedDictionaries>
-                <ResourceDictionary Source="../Estilos/Estilos.xaml" />
-            </ResourceDictionary.MergedDictionaries>
-        </ResourceDictionary>
+        <Style x:Key="Page_Style"
+   TargetType="{x:Type Grid}">
+            <Setter Property="RenderTransform">
+                <Setter.Value>
+                    <TranslateTransform X="0" Y="50" />
+                </Setter.Value>
+            </Setter>
+            <Style.Triggers>
+                <Trigger Property="Visibility"
+             Value="Collapsed">
+                    <Setter Property="Opacity"
+                Value="0" />
+                </Trigger>
+                <EventTrigger RoutedEvent="Loaded">
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <DoubleAnimation Storyboard.TargetProperty="Opacity"
+                                 Duration="0:0:1"
+                                 From="0"
+                                 To="1" />
+                            <DoubleAnimation Storyboard.TargetProperty="(UIElement.RenderTransform).(TranslateTransform.Y)"
+                                 From="50"
+                                 To="0"
+                                 Duration="0:0:0.8"
+                                 DecelerationRatio="0.6" />
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger>
+            </Style.Triggers>
+        </Style>
     </UserControl.Resources>
 
-    <Grid Margin="15" Style="{StaticResource Page_Style}">
-        <Border CornerRadius="0,20,20,0">
-            
-        </Border>
-        <local:BotaoFechar x:Name="Fechar"  HorizontalAlignment="Right" VerticalAlignment="Top" Height="40" Width="40" Margin="0,15,15,0"/>
+    <Grid Margin="15" Style="{DynamicResource Page_Style}">
+        <Border CornerRadius="0,20,20,0"/>
     </Grid>
 </UserControl>
